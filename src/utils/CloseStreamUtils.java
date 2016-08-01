@@ -3,7 +3,7 @@ package utils;
 import java.io.Closeable;
 import java.io.IOException;
 
-public class LyleUtils {
+public class CloseStreamUtils {
 
 	/**
 	 * 关闭流的方法
