@@ -28,7 +28,6 @@ public class WeiXinSignature {
 		for (int i = 0; i < arr.length; i++) {
 			sb.append(arr[i]);
 		}
-		System.out.println(EncryptUtils.encrypt(sb.toString(), "SHA-1"));
 		// 加密并返回验证结果
 		return signature == null ? false : signature.equals(EncryptUtils
 				.encrypt(sb.toString(), "SHA-1"));
