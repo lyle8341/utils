@@ -11,7 +11,6 @@ import org.slf4j.LoggerFactory;
 
 /**
  * SimpleDateFormat是线程不安全的。
- * 
  * @author Lyle 并发情况下
  */
 public class DateFormatUtils {
