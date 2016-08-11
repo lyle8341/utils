@@ -17,6 +17,7 @@ public class CloseStreamUtils {
 			try {
 				if (null != temp) {
 					temp.close();
+					temp = null;
 				}
 			} catch (IOException e) {
 				e.printStackTrace();

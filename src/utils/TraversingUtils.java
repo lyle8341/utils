@@ -1,8 +1,15 @@
 package utils;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
-public class ArrayUtils {
+/**
+ * 遍历集合，map，数组等工具类
+ * @author Lyle
+ *
+ */
+public class TraversingUtils {
 
 	/**
 	 * 控制台输出数组所有元素
@@ -36,4 +43,17 @@ public class ArrayUtils {
 			System.out.println();
 		}
 	}
+	
+	/**
+	 * 遍历map
+	 * @param map
+	 */
+	public static <K,V> void printMap(Map<K,V> map){
+		if(null != map){
+			for(Entry<K, V> entry:map.entrySet()){
+				System.out.println(entry.getKey() + " : " + entry.getValue());
+			}
+		}
+	}
 }
+
