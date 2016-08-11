@@ -27,19 +27,30 @@ public class EncryptUtils {
 			try {
 				MessageDigest md = MessageDigest.getInstance(algorithm);
 				byte[] bytes = md.digest(text.getBytes());
-				StringBuffer sb = new StringBuffer();
-				for(byte b:bytes){
-					  int bt = b&0xff;  
-		                if (bt < 16){  
-		                    sb.append(0);  
-		                }   
-		                sb.append(Integer.toHexString(bt));  
-				}
-				result = sb.toString();
+				result = bytesToStr(bytes);
 			} catch (NoSuchAlgorithmException e) {
 				LOGGER.error("加密算法{}不存在，请核对!",algorithm);
 			}
 		}
+		return result;
+	}
+
+	/**
+	 * 字节数组转换为十六进制字符串
+	 * @param bytes
+	 * @return
+	 */
+	private static String bytesToStr(byte[] bytes) {
+		String result;
+		StringBuffer sb = new StringBuffer();
+		for(byte b:bytes){
+			  int bt = b&0xff;  
+		        if (bt < 16){  
+		            sb.append(0);  
+		        }   
+		        sb.append(Integer.toHexString(bt));  
+		}
+		result = sb.toString();
 		return result;
 	}
 }
