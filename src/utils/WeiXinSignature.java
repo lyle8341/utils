@@ -1,5 +1,6 @@
 package utils;
 
+import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 
 /**
@@ -18,9 +19,10 @@ public class WeiXinSignature {
 	 * @param timestamp
 	 * @param nonce
 	 * @return
+	 * @throws NoSuchAlgorithmException 
 	 */
 	public static boolean checkSignature(String signature, String timestamp,
-			String nonce) {
+			String nonce) throws NoSuchAlgorithmException {
 		String[] arr = new String[] { TOKEN, timestamp, nonce };
 		// 按字典排序
 		Arrays.sort(arr);
@@ -33,7 +35,7 @@ public class WeiXinSignature {
 				.encrypt(sb.toString(), "SHA-1"));
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws NoSuchAlgorithmException {
 		boolean result = checkSignature(
 				"57d1e045687dc64c6ff6becfa46e1e91a5b99f16", "1470215142342",
 				"474");

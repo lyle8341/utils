@@ -12,8 +12,7 @@ import org.slf4j.LoggerFactory;
 public class EncryptUtils {
 
 	/** 日志输出 */
-	private static final Logger LOGGER = LoggerFactory
-			.getLogger(DateFormatUtils.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(EncryptUtils.class);
 	
 	/**
 	 * @Description: 实现对字符串的加密 
@@ -21,14 +20,14 @@ public class EncryptUtils {
 	 * @param algorithm 算法 MD5 SHA-1 SHA-256
 	 * @return
 	 */
-	public static String encrypt(String text,String algorithm){
+	public static String encrypt(String text,String algorithm) throws NoSuchAlgorithmException{
 		String result = null;
 		if(StringUtils.isNotEmpty(text,algorithm)){
 			try {
 				MessageDigest md = MessageDigest.getInstance(algorithm);
 				byte[] bytes = md.digest(text.getBytes());
 				result = bytesToStr(bytes);
-			} catch (NoSuchAlgorithmException e) {
+			} finally {
 				LOGGER.error("加密算法{}不存在，请核对!",algorithm);
 			}
 		}

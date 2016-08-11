@@ -3,8 +3,16 @@ package utils;
 import java.io.Closeable;
 import java.io.IOException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class CloseStreamUtils {
 
+	
+	/** 日志输出 */
+	private static final Logger LOGGER = LoggerFactory
+			.getLogger(CloseStreamUtils.class);
+	
 	/**
 	 * 关闭流的方法
 	 * @param stream 需要关闭的流
@@ -17,10 +25,11 @@ public class CloseStreamUtils {
 			try {
 				if (null != temp) {
 					temp.close();
-					temp = null;
 				}
 			} catch (IOException e) {
-				e.printStackTrace();
+				LOGGER.error("关闭流时发生错误{}",e.getMessage());
+			}finally{
+				temp = null;
 			}
 		}
 	}
