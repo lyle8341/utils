@@ -20,6 +20,7 @@ public class CloseStreamUtils {
 	 * 此处没有判断stream不为null，因为可变参数中的stream是一个数组
 	 * 其本身不会是null，只是数组中的值可能是null，故不需要判断
 	 */
+	@SafeVarargs
 	public static <T extends Closeable> void close(T... stream) {
 		for (T temp : stream) {
 			try {

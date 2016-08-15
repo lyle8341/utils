@@ -21,12 +21,18 @@ public class StringUtils {
 		return true;
 	}
 	
-
 	/**
-	 * 测试方法
-	 * @param args
+	 * 根据给定格式填充参数
+	 * 第一个参数%1$s	
+	 * 第二个参数%2$s	
+	 * 第n个参数%n$s	
+	 * @param format格式
+	 * @param args填充参数，可变参数
+	 * @return
 	 */
-	public static void main(String[] args) {
-		
+	@SuppressWarnings("all")
+	public static String format(String format,String... args){
+		return String.format(format, args);
 	}
+	
 }
