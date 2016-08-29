@@ -67,5 +67,4 @@ public class PropertiesUtils {
 		pro.setProperty(key, value);
 		writePropertiesFileObj(path,pro);
 	}
-
 }

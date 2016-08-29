@@ -6,6 +6,11 @@ import java.util.LinkedHashSet;
 import java.util.Properties;
 import java.util.Set;
 
+/**
+ * 顺序输出
+ * @author Lyle
+ *
+ */
 public class OrderedProperties extends Properties{
 
 	private static final long serialVersionUID = 1765622691048056487L;
