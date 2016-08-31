@@ -44,7 +44,7 @@ public class ClassUtils {
         }
     
     /** 
-     * 从包package中获取所有的Class 
+     * 获取包packageName下所有的Class 
      * @param packageName 包名
      * @return 
      */  
