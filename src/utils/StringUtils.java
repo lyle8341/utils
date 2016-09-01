@@ -8,6 +8,10 @@ package utils;
  */
 public class StringUtils {
 
+	private StringUtils() {
+		throw new Error("不允许实例化！");
+	}
+	
 	/**
 	 * true表示不为空
 	 * @param text 需要判断的参数

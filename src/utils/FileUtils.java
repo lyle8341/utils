@@ -5,6 +5,10 @@ import java.io.IOException;
 
 public class FileUtils {
 
+	private FileUtils() {
+		throw new Error("不允许实例化！");
+	}
+	
 	/**
 	 * 检查文件是否存在，如果不存在就创建一个
 	 * @param path 文件路径

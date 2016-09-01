@@ -8,6 +8,9 @@ import org.slf4j.LoggerFactory;
 
 public class CloseStreamUtils {
 
+	private CloseStreamUtils() {
+		throw new Error("不允许实例化！");
+	}
 	
 	/** 日志输出 */
 	private static final Logger LOGGER = LoggerFactory

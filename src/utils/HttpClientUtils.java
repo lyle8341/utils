@@ -28,6 +28,7 @@ public class HttpClientUtils {
 	private static final Integer timeout = 60000;
 
 	private HttpClientUtils() {
+		throw new Error("不允许实例化！");
 	}
 
 	/**

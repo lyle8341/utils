@@ -29,6 +29,10 @@ import com.thoughtworks.xstream.io.xml.XppDriver;
  */
 public class XmlUtils {
 	
+	private XmlUtils() {
+		throw new Error("不允许实例化！");
+	}
+	
 	/**
 	 * 从请求request中解析出xml信息
 	 * @param request

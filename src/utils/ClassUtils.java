@@ -14,6 +14,10 @@ import java.util.jar.JarFile;
 
 public class ClassUtils {
 
+	private ClassUtils() {
+		throw new Error("不允许实例化！");
+	}
+	
 	/**
 	 * 获取某个接口所在包下所有实现这个接口的类  
 	 * @param c 接口类
@@ -44,7 +48,7 @@ public class ClassUtils {
         }
     
     /** 
-     * 获取包packageName下所有的Class 
+     * 获取包packageName下所有的Class
      * @param packageName 包名
      * @return 
      */  

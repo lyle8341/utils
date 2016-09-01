@@ -11,6 +11,10 @@ import org.slf4j.LoggerFactory;
  */
 public class EncryptUtils {
 
+	private EncryptUtils() {
+		throw new Error("不允许实例化！");
+	}
+	
 	/** 日志输出 */
 	private static final Logger LOGGER = LoggerFactory.getLogger(EncryptUtils.class);
 	

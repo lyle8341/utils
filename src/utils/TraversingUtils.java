@@ -11,6 +11,10 @@ import java.util.Map.Entry;
  */
 public class TraversingUtils {
 
+	private TraversingUtils() {
+		throw new Error("不允许实例化！");
+	}
+	
 	/**
 	 * 控制台输出数组所有元素
 	 * @param obj

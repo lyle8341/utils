@@ -13,6 +13,10 @@ import utils.wx.WXBizMsgCrypt;
  */
 public class WeiXinSignature {
 
+	private WeiXinSignature() {
+		throw new Error("不允许实例化！");
+	}
+	
 	/**
 	 * 服务器配置页面对应url所做的token验证
 	 * @param signature
