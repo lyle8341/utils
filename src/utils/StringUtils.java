@@ -39,4 +39,20 @@ public class StringUtils {
 		return String.format(format, args);
 	}
 	
+	/**
+	 * 将字符串指定个数的字符转成小写：比如firstCharToLower("HEllo",2),输出hello
+	 * @param str 需要处理的字符串
+	 * @param num 处理几个字符
+	 * @return
+	 */
+	public static String benginCharToLower(String str,int num){
+		if(isNotEmpty(str)){
+			char[] chars = new char[num];
+			str.getChars(0, num, chars, 0);
+			String needReplace = String.valueOf(chars);
+			str = str.replace(needReplace,needReplace.toLowerCase());
+		}
+		return str;
+	}
+	
 }
