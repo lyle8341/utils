@@ -9,10 +9,14 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.SerializationConfig;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.serializer.SerializeConfig;
 import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.alibaba.fastjson.serializer.SimpleDateFormatSerializer;
 
 public class JsonUtils {
 
+	private static SerializeConfig mapping = new SerializeConfig();  
+	
 	/**
 	 * 格式化输出json数据<br>
 	 <pre>
@@ -80,5 +84,11 @@ public class JsonUtils {
 	}
 	
 	
-	
+	public static String formatDate(Date date,String format){
+		mapping.put(Date.class, new SimpleDateFormatSerializer(format));
+		return JSON.toJSONString(date, mapping);
+		
+		
+		
+	}
 }
