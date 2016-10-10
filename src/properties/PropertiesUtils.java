@@ -9,6 +9,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.util.Map;
 import java.util.Properties;
 
 import utils.FileUtils;
@@ -83,5 +84,21 @@ public class PropertiesUtils {
 		Properties pro = new OrderedProperties();
 		pro.setProperty(key, value);
 		writePropertiesFileObj(path,pro);
+	}
+	
+	/**
+	 * 获取指定环境变量名的值
+	 * @param key
+	 * @return
+	 */
+	public static String getEnvVariable(String key){
+		return System.getenv(key);
+	}
+	
+	/**
+	 * 获取所有的环境变量及值
+	 */
+	public static Map<String,String> getEnvVariable(){
+		return System.getenv();
 	}
 }
