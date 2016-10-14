@@ -29,7 +29,7 @@ public class VelocityUtils {
         prop.setProperty(Velocity.ENCODING_DEFAULT, "UTF-8");
         prop.setProperty(Velocity.INPUT_ENCODING, "UTF-8");
         prop.setProperty(Velocity.OUTPUT_ENCODING, "UTF-8");
-        ve.init(prop);//第二种
+        ve.init(prop);//第二种,目的是解决页面中文乱码。
         //ve.init(propsFilename);//属性文件的位置
         //取得velocity的模板
         Template template = ve.getTemplate(viewName + ".vm");
